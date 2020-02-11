@@ -16,6 +16,11 @@ import com.ceiba.ceibacoins.domain.model.Employee;
 @Service
 public class EmployeeService implements IEmployeeService {
 
+	private static final String CREADO = "Creado Exitosamente";
+	private static final String ACTUALIZADO = "Usuario Actualizado Exitosamente";
+	private static final String EXISTE = "El usuario ya existe";
+	private static final String NOEXISTE = "El usuario no existe";
+
 	@Autowired
 	private IEmployeeRepository employeeRepository;
 	@Autowired
@@ -26,9 +31,9 @@ public class EmployeeService implements IEmployeeService {
 		try {
 			if (newEmployee ^ (findById(employee.getNuip()) != null)){
 				employeeRepository.save(employee);
-				return newEmployee ? "Creado Exitosamente" : "Usuario Actualizado Exitosamente";
+				return newEmployee ? CREADO : ACTUALIZADO;
 			} else {
-				return newEmployee ? "El usuario ya existe" : "El usuario no existe";
+				return newEmployee ? EXISTE : NOEXISTE;
 			}
 		} catch (Exception e) {
 			return "Error: "+e.getMessage();
@@ -54,7 +59,7 @@ public class EmployeeService implements IEmployeeService {
 	
 	@Override
 	public List<Employee> findActive() {
-		return employeeRepository.findActiveEmployees(true);
+		return employeeRepository.findByStateEmployees(true);
 	}
 	
 	@Override

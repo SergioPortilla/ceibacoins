@@ -10,6 +10,11 @@ import com.ceiba.ceibacoins.domain.model.Employee;
 
 public interface IEmployeeRepository extends CrudRepository<Employee,Long> {
 
+	/**
+	 *
+	 * @param state
+	 * @return
+	 */
 	@Query("SELECT e FROM Employee e WHERE e.state = :state")
-	List<Employee> findActiveEmployees(@Param("state") Boolean state);
+	List<Employee> findByStateEmployees(@Param("state") Boolean state);
 }

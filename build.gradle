@@ -17,6 +17,7 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	runtimeOnly 'com.h2database:h2'
 	runtimeOnly 'mysql:mysql-connector-java'
 	testCompile "org.mockito:mockito-inline:+"
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
@@ -24,11 +25,15 @@ dependencies {
 	}
 }
 
+//test {
+//	jacoco {
+//		append = false
+//		destinationFile = file("jacoco/jacocoTest.exec")
+//	}
+//	reports.junitXml.destination = file ("jacoco/test-results")
+//}
+//jacocoTestReport.dependsOn(test)
+
 test {
 	useJUnitPlatform()
-}
-
-jacoco {
-	toolVersion = "0.8.5"
-	reportsDir = file("$buildDir/customJacocoReportDir")
 }

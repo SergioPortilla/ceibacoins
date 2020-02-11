@@ -1,8 +1,8 @@
 package com.ceiba.ceibacoins.domain.model.validation;
 
+import java.text.SimpleDateFormat;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.Date;
 
 public class ValidationDateEmployee {
@@ -12,7 +12,8 @@ public class ValidationDateEmployee {
     }
 
     public static LocalDate convertDate(Date dateToConvert) {
-        return ((Date) dateToConvert).toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        return LocalDate.parse(format.format(dateToConvert));
     }
 
     public static Boolean isBirthDay(LocalDate date, Date dateEmployee) {
@@ -21,6 +22,6 @@ public class ValidationDateEmployee {
     }
 
     public static Boolean isEntry(LocalDate date, Date dateEmployee) {
-        return date == convertDate(dateEmployee);
+        return date.equals(convertDate(dateEmployee));
     }
 }
