@@ -1,6 +1,6 @@
-package com.ceiba.ceibacoins.builder;
+package com.ceiba.ceibacoins.application.builder;
 
-import com.ceiba.ceibacoins.domain.model.Employee;
+import com.ceiba.ceibacoins.infrastructure.adapter.repository.db.dto.EmployeeDTO;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -32,7 +32,7 @@ public class EmployeeTestDataBuilder {
         this.ceibaCoins = CEIBACOINS;
         this.state = STATE;
     }
-    public Employee Build() {
-        return new Employee (this.nuip, this.employeeName, this.employeeLastName, this.born, this.entry, this.ceibaCoins,this.state);
+    public EmployeeDTO Build() {
+        return new EmployeeDTO(this.nuip, this.employeeName, this.employeeLastName, this.born, this.entry, this.ceibaCoins,this.state);
     }
 }

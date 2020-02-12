@@ -1,53 +1,38 @@
 package com.ceiba.ceibacoins.application.caseuse;
 
-import com.ceiba.ceibacoins.builder.EmployeeTestDataBuilder;
-import com.ceiba.ceibacoins.domain.model.Employee;
+import com.ceiba.ceibacoins.infrastructure.adapter.repository.db.dto.EmployeeDTO;
+import com.ceiba.ceibacoins.domain.ports.IEmployeeRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.mockito.*;
 
 class EmployeeServiceTest {
 
-    public IEmployeeService employeeService = new EmployeeService();
+    private EmployeeDTO employee;
+    private IEmployeeService employeeServices = new EmployeeService();
 
     @Mock
-    private Employee employee;
+    private IEmployeeRepository employeeRepository;
+
+    @Mock
+    private IEmployeeService employeeService = new EmployeeService();
 
     @BeforeEach
     public void setup(){
         MockitoAnnotations.initMocks(this);
     }
-//    @BeforeEach
-//    public void setup(){
-//        MockitoAnnotations.initMocks(this);
-//        this.employeeService.create(employee, true);
-//    }
-
-//    @BeforeEach
-//    void setUp() {
-//        List mockedList = mock(List.class);
-////        Employee mockedList = mock(Employee.class);
-//        //using mock object
-//        mockedList. add("one");
-//        mockedList.clear();
-//        //verification
-//        verify(mockedList).add("one");
-//        verify(mockedList).clear();
-//    }
-
 
     @Test
     void testCreate() {
         // arrange
-        Employee employee = new EmployeeTestDataBuilder().Build();
+//        Employee employee = new EmployeeTestDataBuilder().Build();
+//        Mockito.doReturn(null).when(employeeService).findById(employee.getNuip());
+//        Mockito.doReturn(null).when(employeeRepository).save(employee);
         // act
-        String result = this.employeeService.create(employee,true) ;
+
+//        String result = employeeServices.create(employee,true);
         // assert
-        assertEquals("Creado Exitosamente",result);
+//        assertEquals("Creado Exitosamente",result);
     }
 
     @Test
@@ -56,11 +41,14 @@ class EmployeeServiceTest {
     }
 
     @Test
-    void findById() {
-    }
-
-    @Test
     void testFindById() {
+        // arrange
+//        Employee employee = new EmployeeTestDataBuilder().Build();
+        // act
+//        Mockito.doReturn(employee).when(employeeRepository).findById(employee.getNuip());
+//        Employee employeeRecibe = employeeServices.findById(employee.getNuip());
+        // assert
+//        assertEquals(employee,employeeRecibe);
     }
 
 

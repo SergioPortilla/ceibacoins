@@ -4,14 +4,15 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.ceiba.ceibacoins.domain.model.Employee;
 import com.ceiba.ceibacoins.domain.ports.IActivityRepository;
-import com.ceiba.ceibacoins.domain.model.Activity;
 import com.ceiba.ceibacoins.domain.model.validation.ValidationDateEmployee;
+import com.ceiba.ceibacoins.infrastructure.adapter.repository.db.dto.ActivityDTO;
+import com.ceiba.ceibacoins.infrastructure.adapter.repository.db.mapper.EmployeeMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ceiba.ceibacoins.domain.ports.IEmployeeRepository;
-import com.ceiba.ceibacoins.domain.model.Employee;
 
 @Service
 public class EmployeeService implements IEmployeeService {
@@ -20,9 +21,14 @@ public class EmployeeService implements IEmployeeService {
 	private static final String ACTUALIZADO = "Usuario Actualizado Exitosamente";
 	private static final String EXISTE = "El usuario ya existe";
 	private static final String NOEXISTE = "El usuario no existe";
+	private static final String CEIBACOINSASIGNADOS = "Se agregaron CeibaCoins a: ";
+	private static final String ERROR = "Error obtenido: ";
 
+	/** Inyeccion del repositorio de empleados */
 	@Autowired
 	private IEmployeeRepository employeeRepository;
+
+	/** Inyeccion del repositorio de actividades */
 	@Autowired
 	private IActivityRepository activityRepository;
 
@@ -30,41 +36,42 @@ public class EmployeeService implements IEmployeeService {
 	public String create(Employee employee, Boolean newEmployee) {
 		try {
 			if (newEmployee ^ (findById(employee.getNuip()) != null)){
-				employeeRepository.save(employee);
+				employeeRepository.save(EmployeeMapper.MAPPER.employee(employee));
 				return newEmployee ? CREADO : ACTUALIZADO;
 			} else {
 				return newEmployee ? EXISTE : NOEXISTE;
 			}
 		} catch (Exception e) {
-			return "Error: "+e.getMessage();
+			return ERROR+e.getMessage();
 		}
 	}
 
 	@Override
-	public String create(LocalDate date) {
+	public String UpdateCoins(LocalDate date) {
 		List<String> usersModify = new ArrayList<>();
 		for (Employee employee : findActive()) {
 			boolean modify = false;
 			if (modify = ValidationDateEmployee.isBirthDay(date, employee.getBirthday()))
-				employee.setCeibaCoins(+ activityRepository.findById(1L).orElse(new Activity()).getPrice());
+				employee.setCeibaCoins(employee.getCeibaCoins() + activityRepository.findById(1L).orElse(new ActivityDTO()).getPrice());
 			if (modify = modify || ValidationDateEmployee.isEntry(date, employee.getEntry()))
-				employee.setCeibaCoins(+ activityRepository.findById(2L).orElse(new Activity()).getPrice());
+				employee.setCeibaCoins(employee.getCeibaCoins() + activityRepository.findById(2L).orElse(new ActivityDTO()).getPrice());
 			if (!modify)
 				continue;
 			create(employee, false);
 			usersModify.add(employee.getEmployeeName());
 		}
-		return "Se agregaron CeibaCoins a: "+usersModify.toString();
+		return CEIBACOINSASIGNADOS+usersModify.toString();
 	}
 	
 	@Override
 	public List<Employee> findActive() {
-		return employeeRepository.findByStateEmployees(true);
+//		return employeeRepository.findByStateEmployees(true);
+		return EmployeeMapper.MAPPER.toEmployees(employeeRepository.findByStateEmployees(true));
 	}
 	
 	@Override
 	public Employee findById(Long nuip) {
-			return employeeRepository.findById(nuip).orElse(null);
+		return EmployeeMapper.MAPPER.employeeDTO(employeeRepository.findById(nuip).orElse(null));
 	}
 
 	@Override

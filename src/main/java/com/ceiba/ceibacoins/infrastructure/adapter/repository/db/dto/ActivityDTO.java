@@ -1,40 +1,43 @@
-package com.ceiba.ceibacoins.domain.model;
+package com.ceiba.ceibacoins.infrastructure.adapter.repository.db.dto;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
 /**
- * 
+ * Entidad de las actividades que tienen valor en Ceiba
+ *
  * @since 06/02/2020
  * @author sergio.portilla
  */
 @Entity
 @Table(name = "actividad")
-public class Activity {
+public class ActivityDTO {
 
-	/**	 */
+	/**	Id de la Actividad */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idActivity;
 	
-	/**	 */
+	/**	Nombre de la actividad */
 	@NotEmpty
 	private String name;
-	/**	 */
+
+	/**	Precio indicado para la actividad */
 	@NotEmpty
 	private Double price;
 	
 	/**
-	 * 
-	 * @param name
-	 * @param price
+	 * Constructor de acrtividad
+	 *
+	 * @param name Nombre de la actividad
+	 * @param price Precio indicado para la actividad
 	 */
-	public Activity(String name, Double price) {
+	public ActivityDTO(String name, Double price) {
 		this.name = name;
 		this.price = price;
 	}
 	
-	public Activity() {
+	public ActivityDTO() {
 	}
 	
 	public Long getIdActivity() {
@@ -55,6 +58,5 @@ public class Activity {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
-	
 	
 }
