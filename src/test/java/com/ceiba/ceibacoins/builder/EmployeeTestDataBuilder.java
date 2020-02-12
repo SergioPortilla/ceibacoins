@@ -1,4 +1,4 @@
-package com.ceiba.ceibacoins.application.builder;
+package com.ceiba.ceibacoins.builder;
 
 import com.ceiba.ceibacoins.infrastructure.adapter.repository.db.dto.EmployeeDTO;
 

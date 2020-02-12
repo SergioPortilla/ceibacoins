@@ -9,17 +9,28 @@ import java.util.Date;
  * @author sergio.portilla
  */
 public class Employee {
+    /** Numero unico de identificacion personal*/
     private Long nuip;
 
+    /** Nombre del empleado */
     private String employeeName;
+
+    /**	Apellido del empleado */
     private String employeeLastName;
 
+    /**	Dia de nacimiento */
     private Date birthday;
+
+    /**	Dia de ingreso a Ceiba */
     private Date entry;
 
+    /**	Cantidad de ceibaCoins obtenidos por el empleado */
     private Double ceibaCoins;
+
+    /** Estado del empleado, si se encuentra en la empresa o no */
     private Boolean state;
 
+    /** Constructor vacio */
     public Employee() {
     }
 

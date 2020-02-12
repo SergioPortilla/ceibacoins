@@ -65,7 +65,6 @@ public class EmployeeService implements IEmployeeService {
 	
 	@Override
 	public List<Employee> findActive() {
-//		return employeeRepository.findByStateEmployees(true);
 		return EmployeeMapper.MAPPER.toEmployees(employeeRepository.findByStateEmployees(true));
 	}
 	

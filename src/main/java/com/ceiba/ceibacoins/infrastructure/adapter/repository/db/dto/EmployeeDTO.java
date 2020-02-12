@@ -71,7 +71,8 @@ public class EmployeeDTO {
 		this.ceibaCoins = ceibaCoins;
 		this.state = state;
 	}
-    
+
+	/** Constructor vacio */
 	public EmployeeDTO() {
 	}
 
