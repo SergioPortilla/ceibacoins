@@ -33,7 +33,7 @@ public class EmployeeService implements IEmployeeService {
 	private IActivityRepository activityRepository;
 
 	@Override
-	public String create(Employee employee, Boolean newEmployee) {
+	public String create(Employee employee, boolean newEmployee) {
 		try {
 			if (newEmployee ^ (findById(employee.getNuip()) != null)){
 				employeeRepository.save(EmployeeMapper.MAPPER.employee(employee));
@@ -47,7 +47,7 @@ public class EmployeeService implements IEmployeeService {
 	}
 
 	@Override
-	public String UpdateCoins(LocalDate date) {
+	public String updateCoins(LocalDate date) {
 		List<String> usersModify = new ArrayList<>();
 		for (Employee employee : findActive()) {
 			boolean modify = false;

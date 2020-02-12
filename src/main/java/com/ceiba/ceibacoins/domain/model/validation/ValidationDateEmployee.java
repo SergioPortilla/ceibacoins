@@ -19,7 +19,7 @@ public class ValidationDateEmployee {
      * @param date fecha en la cual se realizara la verificacion.
      * @return Si es entre semana obtiene el valor de verdadero, fin de semana falso.
      */
-    public static Boolean isWeekDay(LocalDate date) {
+    public static boolean isWeekDay(LocalDate date) {
         return !(date.getDayOfWeek() == DayOfWeek.SATURDAY || date.getDayOfWeek() == DayOfWeek.SUNDAY);
     }
 

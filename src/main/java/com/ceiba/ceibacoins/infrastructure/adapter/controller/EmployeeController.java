@@ -66,6 +66,6 @@ public class EmployeeController {
 	 * @return Indica a que usuarios les fueron asignados ceibaCoins
 	 */
 	@PutMapping(path = "/update_coins")
-	public @ResponseBody String updateEmployes(){ return employeeService.UpdateCoins(LocalDate.now());}
+	public @ResponseBody String updateEmployes(){ return employeeService.updateCoins(LocalDate.now());}
 
 }

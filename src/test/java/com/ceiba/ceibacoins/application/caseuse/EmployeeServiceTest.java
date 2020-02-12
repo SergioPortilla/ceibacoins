@@ -35,10 +35,6 @@ class EmployeeServiceTest {
 //        assertEquals("Creado Exitosamente",result);
     }
 
-    @Test
-    void findActive() {
-
-    }
 
     @Test
     void testFindById() {
@@ -56,11 +52,4 @@ class EmployeeServiceTest {
     void testFindActive() {
     }
 
-    @Test
-    void testFindById1() {
-    }
-
-    @Test
-    void testFindById2() {
-    }
 }

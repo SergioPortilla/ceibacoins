@@ -43,7 +43,7 @@ public interface IEmployeeService {
 	 * @param newEmployee si es nuevo sera verdadero, de lo contrario falso
 	 * @return informacion de si se creo o edito el usuario
 	 */
-	public String create(Employee employee, Boolean newEmployee);
+	public String create(Employee employee, boolean newEmployee);
 
 	/**
 	 * Verifica si todos los empleados creados se les debe agregar CeibaCoins segun la fecha.
@@ -51,6 +51,6 @@ public interface IEmployeeService {
 	 * @param date fecha en la cual se realiza la verificacion
 	 * @return indica a que empleados le fueron asignados ceibacoins
 	 */
-	public String UpdateCoins(LocalDate date);
+	public String updateCoins(LocalDate date);
 
 }
