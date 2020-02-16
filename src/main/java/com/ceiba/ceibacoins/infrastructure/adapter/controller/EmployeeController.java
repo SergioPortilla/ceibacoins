@@ -21,15 +21,18 @@ import java.util.List;
 public class EmployeeController {
 
 	/** Inyeccion del servicio de empleados */
-	@Autowired
-	public IEmployeeService employeeService;
+	public final IEmployeeService employeeService;
+
+	public EmployeeController(IEmployeeService employeeService) {
+		this.employeeService = employeeService;
+	}
 
 	/**
 	 * Peticion para obtener todos los empleados activos de la base de base de datos.
 	 *
 	 * @return Lista de empleados activos
 	 */
-	@GetMapping(path = "/all")
+	@GetMapping
 	public @ResponseBody List<Employee> getActiveEmployees() { return employeeService.findActive();}
 
 	/**
@@ -38,7 +41,7 @@ public class EmployeeController {
 	 * @param employee Datos del empleado enviados desde la peticion
 	 * @return Dato de si fue el usuario creado o no
 	 */
-	@PostMapping(path = "/create")
+	@PostMapping
 	public @ResponseBody String createEmployes(@RequestBody Employee employee){ return employeeService.create(employee, true);}
 
 	/**
@@ -47,7 +50,7 @@ public class EmployeeController {
 	 * @param nuip numero de documento del empleado obtenido desde la peticion
 	 * @return Datos del empleado.
 	 */
-	@GetMapping(path = "/search/{nuip}")
+	@GetMapping(path = "/{nuip}")
 	public @ResponseBody
 	Employee retrieveEmployee(@PathVariable long nuip){ return employeeService.findById(nuip, LocalDate.now());}
 
@@ -57,7 +60,7 @@ public class EmployeeController {
 	 * @param employee Datos del empleado enviados desde la peticion
 	 * @return Indicacion de si el usuario fue o no creado
 	 */
-	@PutMapping(path = "/update")
+	@PutMapping
 	public @ResponseBody String updateEmployes(@RequestBody Employee employee){ return employeeService.create(employee, false);}
 
 	/**
@@ -65,7 +68,7 @@ public class EmployeeController {
 	 *
 	 * @return Indica a que usuarios les fueron asignados ceibaCoins
 	 */
-	@PutMapping(path = "/update_coins")
+	@PatchMapping
 	public @ResponseBody String updateEmployes(){ return employeeService.updateCoins(LocalDate.now());}
 
 }
