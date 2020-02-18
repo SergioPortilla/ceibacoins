@@ -1,4 +1,4 @@
-package com.ceiba.ceibacoins.infrastructure.adapter.repository.db.dto;
+package com.ceiba.ceibacoins.infrastructure.adapter.repository.db.jpaentity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
@@ -11,7 +11,7 @@ import javax.validation.constraints.NotEmpty;
  */
 @Entity
 @Table(name = "actividad")
-public class ActivityDTO {
+public class JpaActivity {
 
 	/**	Id de la Actividad */
 	@Id
@@ -32,12 +32,12 @@ public class ActivityDTO {
 	 * @param name Nombre de la actividad
 	 * @param price Precio indicado para la actividad
 	 */
-	public ActivityDTO(String name, Double price) {
+	public JpaActivity(String name, Double price) {
 		this.name = name;
 		this.price = price;
 	}
 	
-	public ActivityDTO() {
+	public JpaActivity() {
 	}
 	
 	public Long getIdActivity() {

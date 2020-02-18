@@ -1,7 +1,7 @@
 package com.ceiba.ceibacoins.infrastructure.adapter.repository.db.mapper;
 
 import com.ceiba.ceibacoins.domain.model.Employee;
-import com.ceiba.ceibacoins.infrastructure.adapter.repository.db.dto.EmployeeDTO;
+import com.ceiba.ceibacoins.infrastructure.adapter.repository.db.jpaentity.JpaEmployee;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
@@ -12,9 +12,9 @@ public interface EmployeeMapper {
 
     EmployeeMapper MAPPER = Mappers.getMapper(EmployeeMapper.class);
 
-    Employee employeeDTO(EmployeeDTO employeeDTO);
+    Employee employeeDTO(JpaEmployee jpaEmployee);
 
-    EmployeeDTO employee(Employee employee);
+    JpaEmployee employee(Employee employee);
 
-    List<Employee> toEmployees(List<EmployeeDTO> employeesDTO);
+    List<Employee> toEmployees(List<JpaEmployee> employeesDTO);
 }

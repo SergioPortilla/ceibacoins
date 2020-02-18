@@ -1,4 +1,4 @@
-package com.ceiba.ceibacoins.infrastructure.adapter.repository.db.dto;
+package com.ceiba.ceibacoins.infrastructure.adapter.repository.db.jpaentity;
 
 import java.util.Date;
 
@@ -19,7 +19,7 @@ import org.springframework.format.annotation.DateTimeFormat;
  */
 @Entity
 @Table(name = "empleado")
-public class EmployeeDTO {
+public class JpaEmployee {
 	
 	/** Numero unico de identificacion personal*/
 	@Id
@@ -60,7 +60,7 @@ public class EmployeeDTO {
      * @param ceibaCoins Cantidad de ceibaCoins obtenidos por el empleado
      * @param state Estado del empleado, si se encuentra en la empresa o no
      */
-    public EmployeeDTO(Long nuip, @NotEmpty String employeeName, @NotEmpty String employeeLastName, Date birthday, Date entry,
+    public JpaEmployee(Long nuip, @NotEmpty String employeeName, @NotEmpty String employeeLastName, Date birthday, Date entry,
 					   Double ceibaCoins, Boolean state) {
 		super();
 		this.nuip = nuip;
@@ -73,7 +73,7 @@ public class EmployeeDTO {
 	}
 
 	/** Constructor vacio */
-	public EmployeeDTO() {
+	public JpaEmployee() {
 	}
 
 	public Long getNuip() {

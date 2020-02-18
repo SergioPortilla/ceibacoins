@@ -1,6 +1,6 @@
 package com.ceiba.ceibacoins.application.caseuse;
 
-import com.ceiba.ceibacoins.infrastructure.adapter.repository.db.dto.EmployeeDTO;
+import com.ceiba.ceibacoins.infrastructure.adapter.repository.db.jpaentity.JpaEmployee;
 import com.ceiba.ceibacoins.domain.ports.EmployeeRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -8,7 +8,7 @@ import org.mockito.*;
 
 class EmployeeServiceTest {
 
-    private EmployeeDTO employee;
+    private JpaEmployee employee;
     private EmployeeService employeeServices = new EmployeeService();
 
     @Mock

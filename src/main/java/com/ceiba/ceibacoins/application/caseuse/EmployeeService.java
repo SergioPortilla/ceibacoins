@@ -7,7 +7,7 @@ import java.util.List;
 import com.ceiba.ceibacoins.domain.model.Employee;
 import com.ceiba.ceibacoins.domain.ports.ActivityRepository;
 import com.ceiba.ceibacoins.domain.model.validation.ValidationDateEmployee;
-import com.ceiba.ceibacoins.infrastructure.adapter.repository.db.dto.ActivityDTO;
+import com.ceiba.ceibacoins.infrastructure.adapter.repository.db.jpaentity.JpaActivity;
 import com.ceiba.ceibacoins.infrastructure.adapter.repository.db.mapper.EmployeeMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -50,9 +50,9 @@ public class EmployeeService {
 		for (Employee employee : findActive()) {
 			boolean modify = false;
 			if (modify = ValidationDateEmployee.isBirthDay(date, employee.getBirthday()))
-				employee.setCeibaCoins(employee.getCeibaCoins() + activityRepository.findById(1L).orElse(new ActivityDTO()).getPrice());
+				employee.setCeibaCoins(employee.getCeibaCoins() + activityRepository.findById(1L).orElse(new JpaActivity()).getPrice());
 			if (modify = modify || ValidationDateEmployee.isEntry(date, employee.getEntry()))
-				employee.setCeibaCoins(employee.getCeibaCoins() + activityRepository.findById(2L).orElse(new ActivityDTO()).getPrice());
+				employee.setCeibaCoins(employee.getCeibaCoins() + activityRepository.findById(2L).orElse(new JpaActivity()).getPrice());
 			if (!modify)
 				continue;
 			create(employee, false);

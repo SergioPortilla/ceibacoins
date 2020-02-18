@@ -1,6 +1,6 @@
 package com.ceiba.ceibacoins.domain.ports;
 
-import com.ceiba.ceibacoins.infrastructure.adapter.repository.db.dto.ActivityDTO;
+import com.ceiba.ceibacoins.infrastructure.adapter.repository.db.jpaentity.JpaActivity;
 import org.springframework.data.repository.CrudRepository;
 
 /**
@@ -9,6 +9,6 @@ import org.springframework.data.repository.CrudRepository;
  * @since 07/02/2020
  * @author sergio.portilla
  */
-public interface ActivityRepository extends CrudRepository<ActivityDTO, Long>{
+public interface ActivityRepository extends CrudRepository<JpaActivity, Long>{
 
 }
