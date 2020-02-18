@@ -13,7 +13,7 @@ import org.springframework.data.repository.query.Param;
  * @since 06/02/2020
  * @author sergio.portilla
  */
-public interface IEmployeeRepository extends CrudRepository<EmployeeDTO,Long> {
+public interface EmployeeRepository extends CrudRepository<EmployeeDTO,Long> {
 
 	/**
 	 * Obtiene todos los empleados en un estado especifico de base de datos.

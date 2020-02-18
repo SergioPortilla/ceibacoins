@@ -1,11 +1,10 @@
 package com.ceiba.ceibacoins.infrastructure.adapter.controller;
 
+import com.ceiba.ceibacoins.application.caseuse.EmployeeService;
 import com.ceiba.ceibacoins.domain.model.Employee;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import com.ceiba.ceibacoins.application.caseuse.IEmployeeService;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -21,9 +20,9 @@ import java.util.List;
 public class EmployeeController {
 
 	/** Inyeccion del servicio de empleados */
-	public final IEmployeeService employeeService;
+	public final EmployeeService employeeService;
 
-	public EmployeeController(IEmployeeService employeeService) {
+	public EmployeeController(EmployeeService employeeService) {
 		this.employeeService = employeeService;
 	}
 
@@ -32,6 +31,7 @@ public class EmployeeController {
 	 *
 	 * @return Lista de empleados activos
 	 */
+	@CrossOrigin(origins = "http://localhost:3000")
 	@GetMapping
 	public @ResponseBody List<Employee> getActiveEmployees() { return employeeService.findActive();}
 

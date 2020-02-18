@@ -5,17 +5,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.ceiba.ceibacoins.domain.model.Employee;
-import com.ceiba.ceibacoins.domain.ports.IActivityRepository;
+import com.ceiba.ceibacoins.domain.ports.ActivityRepository;
 import com.ceiba.ceibacoins.domain.model.validation.ValidationDateEmployee;
 import com.ceiba.ceibacoins.infrastructure.adapter.repository.db.dto.ActivityDTO;
 import com.ceiba.ceibacoins.infrastructure.adapter.repository.db.mapper.EmployeeMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ceiba.ceibacoins.domain.ports.IEmployeeRepository;
+import com.ceiba.ceibacoins.domain.ports.EmployeeRepository;
 
 @Service
-public class EmployeeService implements IEmployeeService {
+public class EmployeeService {
 
 	private static final String CREADO = "Creado Exitosamente";
 	private static final String ACTUALIZADO = "Usuario Actualizado Exitosamente";
@@ -26,13 +26,12 @@ public class EmployeeService implements IEmployeeService {
 
 	/** Inyeccion del repositorio de empleados */
 	@Autowired
-	private IEmployeeRepository employeeRepository;
+	private EmployeeRepository employeeRepository;
 
 	/** Inyeccion del repositorio de actividades */
 	@Autowired
-	private IActivityRepository activityRepository;
+	private ActivityRepository activityRepository;
 
-	@Override
 	public String create(Employee employee, boolean newEmployee) {
 		try {
 			if (newEmployee ^ (findById(employee.getNuip()) != null)){
@@ -46,7 +45,6 @@ public class EmployeeService implements IEmployeeService {
 		}
 	}
 
-	@Override
 	public String updateCoins(LocalDate date) {
 		List<String> usersModify = new ArrayList<>();
 		for (Employee employee : findActive()) {
@@ -62,18 +60,15 @@ public class EmployeeService implements IEmployeeService {
 		}
 		return CEIBACOINSASIGNADOS+usersModify.toString();
 	}
-	
-	@Override
+
 	public List<Employee> findActive() {
 		return EmployeeMapper.MAPPER.toEmployees(employeeRepository.findByStateEmployees(true));
 	}
-	
-	@Override
+
 	public Employee findById(Long nuip) {
 		return EmployeeMapper.MAPPER.employeeDTO(employeeRepository.findById(nuip).orElse(null));
 	}
 
-	@Override
 	public Employee findById(Long nuip, LocalDate date) {
 		if(ValidationDateEmployee.isWeekDay(date)) return findById(nuip); else return null;
 	}

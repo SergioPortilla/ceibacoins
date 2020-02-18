@@ -9,6 +9,6 @@ import org.springframework.data.repository.CrudRepository;
  * @since 07/02/2020
  * @author sergio.portilla
  */
-public interface IActivityRepository extends CrudRepository<ActivityDTO, Long>{
+public interface ActivityRepository extends CrudRepository<ActivityDTO, Long>{
 
 }
