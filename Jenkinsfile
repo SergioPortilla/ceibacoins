@@ -13,27 +13,26 @@ pipeline {
   //Una sección que define las herramientas “preinstaladas” en Jenkins
   tools {
     jdk 'JDK8_Centos' //Preinstalada en la Configuración del Master
-    gradle 'Gradle4.5_Centos' //Preinstalada en la Configuración del Master
+    gradle 'Gradle5.6_Centos' //Preinstalada en la Configuración del Master
   }
 
   //Aquí comienzan los “items” del Pipeline
   stages{
     stage('Checkout') {
       steps{
-		echo "------------>Checkout<------------"
-		checkout([
-			$class: 'GitSCM', 
-			branches: [[name: '*/master']], 
-			doGenerateSubmoduleConfigurations: false, 
-			extensions: [], 
-			gitTool: 'Default', 
-			submoduleCfg: [], 
-			userRemoteConfigs: [[
-				credentialsId: 'GitHub_SergioPortilla', 
-				url:'https://github.com/SergioPortilla/ceibacoins'
-			]]
-		])
-
+	echo "------------>Checkout<------------"
+	checkout([
+	    $class: 'GitSCM', 
+	    branches: [[name: '*/master']], 
+	    doGenerateSubmoduleConfigurations: false, 
+	    extensions: [], 
+	    gitTool: 'Default', 
+	    submoduleCfg: [], 
+	    userRemoteConfigs: [[
+		credentialsId: 'GitHub_SergioPortilla', 
+		url:'https://github.com/SergioPortilla/ceibacoins'
+	     ]]
+	])
       }
     }
     
@@ -49,8 +48,7 @@ pipeline {
       steps{
         echo '------------>Análisis de código estático<------------'
         withSonarQubeEnv('Sonar') {
-			sh "${tool name: 'SonarScanner', 
-			type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
+			sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
         }
       }
     }
@@ -58,7 +56,7 @@ pipeline {
     stage('Build') {
       steps {
         echo "------------>Build<------------"
-		sh 'gradle --b ./build.gradle build -x test'
+	    sh 'gradle --b ./build.gradle build -x test'
       }
     }  
   }
