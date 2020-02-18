@@ -16,6 +16,7 @@ import java.util.List;
  * @author sergio.portilla
  */
 @Controller
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping(path = "/ceibacoins")
 public class EmployeeController {
 
@@ -31,7 +32,6 @@ public class EmployeeController {
 	 *
 	 * @return Lista de empleados activos
 	 */
-	@CrossOrigin(origins = "http://localhost:3000")
 	@GetMapping
 	public @ResponseBody List<Employee> getActiveEmployees() { return employeeService.findActive();}
 

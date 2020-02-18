@@ -25,12 +25,14 @@ public class EmployeeService {
 	private static final String ERROR = "Error obtenido: ";
 
 	/** Inyeccion del repositorio de empleados */
-	@Autowired
-	private EmployeeRepository employeeRepository;
+	private final EmployeeRepository employeeRepository;
 
 	/** Inyeccion del repositorio de actividades */
-	@Autowired
 	private ActivityRepository activityRepository;
+
+	public EmployeeService(EmployeeRepository employeeRepository) {
+		this.employeeRepository = employeeRepository;
+	}
 
 	public String create(Employee employee, boolean newEmployee) {
 		try {
