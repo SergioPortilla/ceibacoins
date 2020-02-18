@@ -9,13 +9,13 @@ import org.mockito.*;
 class EmployeeServiceTest {
 
     private JpaEmployee employee;
-    private EmployeeService employeeServices = new EmployeeService();
+    private EmployeeService employeeServices;
 
     @Mock
     private EmployeeRepository employeeRepository;
 
     @Mock
-    private EmployeeService employeeService = new EmployeeService();
+    private EmployeeService employeeService;
 
     @BeforeEach
     public void setup(){
