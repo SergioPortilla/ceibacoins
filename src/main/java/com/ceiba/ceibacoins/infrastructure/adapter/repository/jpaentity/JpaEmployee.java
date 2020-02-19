@@ -1,4 +1,4 @@
-package com.ceiba.ceibacoins.infrastructure.adapter.repository.db.jpaentity;
+package com.ceiba.ceibacoins.infrastructure.adapter.repository.jpaentity;
 
 import java.util.Date;
 
@@ -9,6 +9,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotEmpty;
 
+import com.ceiba.ceibacoins.domain.model.Employee;
 import org.springframework.format.annotation.DateTimeFormat;
 
 /**

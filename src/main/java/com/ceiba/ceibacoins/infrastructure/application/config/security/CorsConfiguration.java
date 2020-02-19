@@ -1,4 +1,4 @@
-package com.ceiba.ceibacoins.infrastructure.application.security;
+package com.ceiba.ceibacoins.infrastructure.application.config.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

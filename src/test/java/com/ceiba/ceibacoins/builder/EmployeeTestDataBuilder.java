@@ -1,6 +1,6 @@
 package com.ceiba.ceibacoins.builder;
 
-import com.ceiba.ceibacoins.infrastructure.adapter.repository.db.jpaentity.JpaEmployee;
+import com.ceiba.ceibacoins.infrastructure.adapter.repository.jpaentity.JpaEmployee;
 
 import java.util.Calendar;
 import java.util.Date;

@@ -1,14 +1,14 @@
 package com.ceiba.ceibacoins.domain.ports;
 
-import com.ceiba.ceibacoins.infrastructure.adapter.repository.db.jpaentity.JpaActivity;
-import org.springframework.data.repository.CrudRepository;
+import com.ceiba.ceibacoins.domain.model.Activity;
+import com.ceiba.ceibacoins.domain.model.Employee;
 
-/**
- * Crud de las actividades.
- *
- * @since 07/02/2020
- * @author sergio.portilla
- */
-public interface ActivityRepository extends CrudRepository<JpaActivity, Long>{
+import java.util.List;
+import java.util.Optional;
 
+public interface ActivityRepository {
+
+    Activity findById(Long idActivity);
+
+    List<Activity> findAll();
 }

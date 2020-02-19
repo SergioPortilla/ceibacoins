@@ -4,15 +4,12 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.ceiba.ceibacoins.domain.model.Activity;
 import com.ceiba.ceibacoins.domain.model.Employee;
+import com.ceiba.ceibacoins.domain.ports.EmployeeRepository;
 import com.ceiba.ceibacoins.domain.ports.ActivityRepository;
 import com.ceiba.ceibacoins.domain.model.validation.ValidationDateEmployee;
-import com.ceiba.ceibacoins.infrastructure.adapter.repository.db.jpaentity.JpaActivity;
-import com.ceiba.ceibacoins.infrastructure.adapter.repository.db.mapper.EmployeeMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.ceiba.ceibacoins.domain.ports.EmployeeRepository;
 
 @Service
 public class EmployeeService {
@@ -30,14 +27,15 @@ public class EmployeeService {
 	/** Inyeccion del repositorio de actividades */
 	private ActivityRepository activityRepository;
 
-	public EmployeeService(EmployeeRepository employeeRepository) {
+	public EmployeeService(EmployeeRepository employeeRepository, ActivityRepository activityRepository) {
 		this.employeeRepository = employeeRepository;
+		this.activityRepository = activityRepository;
 	}
 
-	public String create(Employee employee, boolean newEmployee) {
+	public String createEmployee(Employee employee, boolean newEmployee) {
 		try {
-			if (newEmployee ^ (findById(employee.getNuip()) != null)){
-				employeeRepository.save(EmployeeMapper.MAPPER.employee(employee));
+			if (newEmployee ^ (findEmployeeById(employee.getNuip()) != null)){
+				employeeRepository.save(employee);
 				return newEmployee ? CREADO : ACTUALIZADO;
 			} else {
 				return newEmployee ? EXISTE : NOEXISTE;
@@ -47,32 +45,32 @@ public class EmployeeService {
 		}
 	}
 
-	public String updateCoins(LocalDate date) {
+	public String coinsUpdate(LocalDate date) {
 		List<String> usersModify = new ArrayList<>();
-		for (Employee employee : findActive()) {
+		for (Employee employee : findActiveEmployees()) {
 			boolean modify = false;
 			if (modify = ValidationDateEmployee.isBirthDay(date, employee.getBirthday()))
-				employee.setCeibaCoins(employee.getCeibaCoins() + activityRepository.findById(1L).orElse(new JpaActivity()).getPrice());
+				employee.setCeibaCoins(employee.getCeibaCoins() + activityRepository.findById(1L).getPrice());
 			if (modify = modify || ValidationDateEmployee.isEntry(date, employee.getEntry()))
-				employee.setCeibaCoins(employee.getCeibaCoins() + activityRepository.findById(2L).orElse(new JpaActivity()).getPrice());
+				employee.setCeibaCoins(employee.getCeibaCoins() + activityRepository.findById(2L).getPrice());
 			if (!modify)
 				continue;
-			create(employee, false);
+			createEmployee(employee, false);
 			usersModify.add(employee.getEmployeeName());
 		}
 		return CEIBACOINSASIGNADOS+usersModify.toString();
 	}
 
-	public List<Employee> findActive() {
-		return EmployeeMapper.MAPPER.toEmployees(employeeRepository.findByStateEmployees(true));
+	public List<Employee> findActiveEmployees() {
+		return employeeRepository.findByStateEmployees(true);
 	}
 
-	public Employee findById(Long nuip) {
-		return EmployeeMapper.MAPPER.employeeDTO(employeeRepository.findById(nuip).orElse(null));
+	public Employee findEmployeeById(Long nuip) {
+		return employeeRepository.findById(nuip);
 	}
 
-	public Employee findById(Long nuip, LocalDate date) {
-		if(ValidationDateEmployee.isWeekDay(date)) return findById(nuip); else return null;
+	public Employee findEmployeeById(Long nuip, LocalDate date) {
+		if(ValidationDateEmployee.isWeekDay(date)) return findEmployeeById(nuip); else return null;
 	}
 
 }

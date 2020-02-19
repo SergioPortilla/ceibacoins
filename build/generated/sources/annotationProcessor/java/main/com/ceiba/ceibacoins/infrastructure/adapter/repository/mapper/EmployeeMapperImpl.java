@@ -1,7 +1,7 @@
-package com.ceiba.ceibacoins.infrastructure.adapter.repository.db.mapper;
+package com.ceiba.ceibacoins.infrastructure.adapter.repository.mapper;
 
 import com.ceiba.ceibacoins.domain.model.Employee;
-import com.ceiba.ceibacoins.infrastructure.adapter.repository.db.jpaentity.JpaEmployee;
+import com.ceiba.ceibacoins.infrastructure.adapter.repository.jpaentity.JpaEmployee;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Generated;
@@ -9,14 +9,14 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-02-18T14:38:02-0500",
+    date = "2020-02-19T16:26:45-0500",
     comments = "version: 1.2.0.Final, compiler: javac, environment: Java 11.0.5 (JetBrains s.r.o)"
 )
 @Component
 public class EmployeeMapperImpl implements EmployeeMapper {
 
     @Override
-    public Employee employeeDTO(JpaEmployee jpaEmployee) {
+    public Employee toEmployee(JpaEmployee jpaEmployee) {
         if ( jpaEmployee == null ) {
             return null;
         }
@@ -35,7 +35,7 @@ public class EmployeeMapperImpl implements EmployeeMapper {
     }
 
     @Override
-    public JpaEmployee employee(Employee employee) {
+    public JpaEmployee toJpaEmployee(Employee employee) {
         if ( employee == null ) {
             return null;
         }
@@ -54,14 +54,14 @@ public class EmployeeMapperImpl implements EmployeeMapper {
     }
 
     @Override
-    public List<Employee> toEmployees(List<JpaEmployee> employeesDTO) {
-        if ( employeesDTO == null ) {
+    public List<Employee> toEmployees(List<JpaEmployee> jpaEmployees) {
+        if ( jpaEmployees == null ) {
             return null;
         }
 
-        List<Employee> list = new ArrayList<Employee>( employeesDTO.size() );
-        for ( JpaEmployee jpaEmployee : employeesDTO ) {
-            list.add( employeeDTO( jpaEmployee ) );
+        List<Employee> list = new ArrayList<Employee>( jpaEmployees.size() );
+        for ( JpaEmployee jpaEmployee : jpaEmployees ) {
+            list.add( toEmployee( jpaEmployee ) );
         }
 
         return list;

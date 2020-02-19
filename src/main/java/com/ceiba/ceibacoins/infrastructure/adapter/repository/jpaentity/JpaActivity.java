@@ -1,4 +1,4 @@
-package com.ceiba.ceibacoins.infrastructure.adapter.repository.db.jpaentity;
+package com.ceiba.ceibacoins.infrastructure.adapter.repository.jpaentity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
