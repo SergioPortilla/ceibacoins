@@ -16,7 +16,7 @@ import java.util.List;
  * @author sergio.portilla
  */
 @Controller
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3000", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT})
 @RequestMapping(path = "/ceibacoins")
 public class EmployeeController {
 
