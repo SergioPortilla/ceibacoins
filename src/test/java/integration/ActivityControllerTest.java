@@ -2,10 +2,9 @@ package integration;
 
 import com.ceiba.ceibacoins.CeibacoinsApplication;
 import com.ceiba.ceibacoins.domain.model.Activity;
-import com.ceiba.ceibacoins.domain.model.Employee;
 import com.ceiba.ceibacoins.domain.ports.ActivityRepository;
 import org.assertj.core.api.Assertions;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
