@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - EmployeeControllerTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>EmployeeControllerTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/integration.html">integration</a> &gt; EmployeeControllerTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">3</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.468s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">findById()</td>
+<td class="success">0.280s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">findByStateEmployees()</td>
+<td class="success">0.076s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">save()</td>
+<td class="success">0.112s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>16:32:42.210 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+16:32:42.318 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+16:32:42.532 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [integration.EmployeeControllerTest] from class [org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper]
+16:32:42.724 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [integration.EmployeeControllerTest]: class path resource [integration/EmployeeControllerTest-context.xml] does not exist
+16:32:42.728 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [integration.EmployeeControllerTest]: class path resource [integration/EmployeeControllerTestContext.groovy] does not exist
+16:32:42.731 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [integration.EmployeeControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+16:32:42.939 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [integration.EmployeeControllerTest]
+16:32:42.991 [Test worker] DEBUG org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper - @TestExecutionListeners is not present for class [integration.EmployeeControllerTest]: using defaults.
+16:32:42.993 [Test worker] INFO org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+16:32:43.058 [Test worker] INFO org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@159cb80d, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@38d0d607, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@5f98ce19, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@775080cd, org.springframework.test.context.support.DirtiesContextTestExecutionListener@77c02fa, org.springframework.test.context.transaction.TransactionalTestExecutionListener@39a28cfc, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@20d375d7, org.springframework.test.context.event.EventPublishingTestExecutionListener@5376cfe8, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@34fa6cae, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@1992c3a1, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@22546089, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@4738e2a4, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@204069f1]
+16:32:43.069 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@4a204f92 testClass = EmployeeControllerTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@69ffacfe testClass = EmployeeControllerTest, locations = '{}', classes = '{class com.ceiba.ceibacoins.CeibacoinsApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@78cd1944, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@351584c0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@81505118, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@64157fd8, [ImportsContextCustomizer@17149a31 key = [org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@724108b2, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@52ed9f13, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+16:32:43.093 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@4a204f92 testClass = EmployeeControllerTest, testInstance = integration.EmployeeControllerTest@3ee2b408, testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@69ffacfe testClass = EmployeeControllerTest, locations = '{}', classes = '{class com.ceiba.ceibacoins.CeibacoinsApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@78cd1944, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@351584c0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@81505118, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@64157fd8, [ImportsContextCustomizer@17149a31 key = [org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@724108b2, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@52ed9f13, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]].
+16:32:43.575 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true, server.port=-1}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.4.RELEASE)
+
+2020-02-25 16:32:44.787  INFO 18640 --- [    Test worker] integration.EmployeeControllerTest       : Starting EmployeeControllerTest on SERGIO-PORTILLA with PID 18640 (started by sergio.portilla in C:\Users\sergio.portilla\Documents\workspace-spring-tool-suite-4-4.5.1.RELEASE\ceibacoins)
+2020-02-25 16:32:44.795  INFO 18640 --- [    Test worker] integration.EmployeeControllerTest       : No active profile set, falling back to default profiles: default
+2020-02-25 16:32:46.188  INFO 18640 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-02-25 16:32:46.439  INFO 18640 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 203ms. Found 2 JPA repository interfaces.
+2020-02-25 16:32:48.547  INFO 18640 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-02-25 16:32:48.824  INFO 18640 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-25 16:32:48.956  INFO 18640 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-25 16:32:49.341  INFO 18640 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-02-25 16:32:49.557  INFO 18640 --- [    Test worker] o.t.d.DockerClientProviderStrategy       : Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2020-02-25 16:32:50.776  INFO 18640 --- [    Test worker] o.t.d.NpipeSocketClientProviderStrategy  : Accessing docker with local Npipe socket (npipe:////./pipe/docker_engine)
+2020-02-25 16:32:50.777  INFO 18640 --- [    Test worker] o.t.d.DockerClientProviderStrategy       : Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2020-02-25 16:32:51.177  INFO 18640 --- [    Test worker] org.testcontainers.DockerClientFactory   : Docker host IP address is localhost
+2020-02-25 16:32:51.258  INFO 18640 --- [    Test worker] org.testcontainers.DockerClientFactory   : Connected to docker: 
+  Server Version: 19.03.5
+  API Version: 1.40
+  Operating System: Docker Desktop
+  Total Memory: 1989 MB
+2020-02-25 16:32:51.654  INFO 18640 --- [    Test worker] o.t.utility.RegistryAuthLocator          : Credential helper/store (docker-credential-desktop) does not have credentials for quay.io
+2020-02-25 16:32:52.931  INFO 18640 --- [    Test worker] org.testcontainers.DockerClientFactory   : Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2020-02-25 16:32:52.931  INFO 18640 --- [    Test worker] org.testcontainers.DockerClientFactory   : Checking the system...
+2020-02-25 16:32:52.934  INFO 18640 --- [    Test worker] org.testcontainers.DockerClientFactory   : ?? Docker server version should be at least 1.6.0
+2020-02-25 16:32:53.124  INFO 18640 --- [    Test worker] org.testcontainers.DockerClientFactory   : ?? Docker environment should have more than 2GB free disk space
+2020-02-25 16:32:53.151  INFO 18640 --- [    Test worker] docker[mysql:5.7.8]                      : Creating container for image: mysql:5.7.8
+2020-02-25 16:32:53.331  INFO 18640 --- [    Test worker] o.t.utility.RegistryAuthLocator          : Credential helper/store (docker-credential-desktop) does not have credentials for index.docker.io
+2020-02-25 16:32:53.520  INFO 18640 --- [    Test worker] docker[mysql:5.7.8]                      : Starting container with ID: a678e1af60b83900fbe8380c1ce3abb553001c4597941575de9a06f328f59043
+2020-02-25 16:32:53.908  INFO 18640 --- [    Test worker] docker[mysql:5.7.8]                      : Container mysql:5.7.8 is starting: a678e1af60b83900fbe8380c1ce3abb553001c4597941575de9a06f328f59043
+2020-02-25 16:32:53.937  INFO 18640 --- [    Test worker] docker[mysql:5.7.8]                      : Waiting for database connection to become available at jdbc:mysql://localhost:32905/ceibacoins using query 'SELECT 1'
+2020-02-25 16:33:04.054  INFO 18640 --- [    Test worker] docker[mysql:5.7.8]                      : Container is started (JDBC URL: jdbc:mysql://localhost:32905/ceibacoins)
+2020-02-25 16:33:04.055  INFO 18640 --- [    Test worker] docker[mysql:5.7.8]                      : Container mysql:5.7.8 started in PT14.5322735S
+2020-02-25 16:33:04.225  INFO 18640 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-02-25 16:33:04.284  INFO 18640 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+Hibernate: drop table if exists actividad
+Hibernate: drop table if exists empleado
+Hibernate: create table actividad (id_activity bigint not null auto_increment, name varchar(255), price double precision, primary key (id_activity)) engine=MyISAM
+Hibernate: create table empleado (nuip bigint not null, birthday date, ceiba_coins double precision, employee_last_name varchar(255), employee_name varchar(255), entry date, state bit, primary key (nuip)) engine=MyISAM
+2020-02-25 16:33:05.965  INFO 18640 --- [    Test worker] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'file:/C:/Users/sergio.portilla/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/ceibacoins/build/resources/test/import.sql'
+Hibernate: INSERT INTO ceibacoins.actividad VALUES(1, 'BIRTHDAY', 150000)
+Hibernate: INSERT INTO ceibacoins.actividad VALUES(2, 'ENTRY', 100000)
+Hibernate: INSERT INTO empleado VALUES(1233899201, &quot;2017-06-15&quot;, &quot;0.0&quot;, &quot;PORTILLA&quot;, &quot;SERGIO&quot;, &quot;2017-06-15&quot;, 1)
+Hibernate: INSERT INTO empleado VALUES(1233901774, &quot;1998-10-06&quot;, &quot;0.0&quot;, &quot;DAVILA&quot;, &quot;ALEJANDRA&quot;, &quot;2020-02-10&quot;, 1)
+Hibernate: INSERT INTO empleado VALUES(65746014, &quot;1970-03-22&quot;, &quot;0.0&quot;, &quot;CASTANEDA&quot;, &quot;STELLA&quot;, &quot;2020-02-10&quot;, 0)
+2020-02-25 16:33:05.998  INFO 18640 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-25 16:33:06.018  INFO 18640 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-25 16:33:07.353  INFO 18640 --- [    Test worker] integration.EmployeeControllerTest       : Started EmployeeControllerTest in 23.771 seconds (JVM running for 31.974)
+2020-02-25 16:33:07.403  INFO 18640 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@4a204f92 testClass = EmployeeControllerTest, testInstance = integration.EmployeeControllerTest@3ee2b408, testMethod = findById@EmployeeControllerTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@69ffacfe testClass = EmployeeControllerTest, locations = '{}', classes = '{class com.ceiba.ceibacoins.CeibacoinsApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@78cd1944, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@351584c0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@81505118, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@64157fd8, [ImportsContextCustomizer@17149a31 key = [org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@724108b2, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@52ed9f13, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@36fe0fd]; rollback [true]
+Hibernate: select jpaemploye0_.nuip as nuip1_1_0_, jpaemploye0_.birthday as birthday2_1_0_, jpaemploye0_.ceiba_coins as ceiba_co3_1_0_, jpaemploye0_.employee_last_name as employee4_1_0_, jpaemploye0_.employee_name as employee5_1_0_, jpaemploye0_.entry as entry6_1_0_, jpaemploye0_.state as state7_1_0_ from empleado jpaemploye0_ where jpaemploye0_.nuip=?
+2020-02-25 16:33:07.646  INFO 18640 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@4a204f92 testClass = EmployeeControllerTest, testInstance = integration.EmployeeControllerTest@3ee2b408, testMethod = findById@EmployeeControllerTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@69ffacfe testClass = EmployeeControllerTest, locations = '{}', classes = '{class com.ceiba.ceibacoins.CeibacoinsApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@78cd1944, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@351584c0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@81505118, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@64157fd8, [ImportsContextCustomizer@17149a31 key = [org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@724108b2, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@52ed9f13, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]
+2020-02-25 16:33:07.653  INFO 18640 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@4a204f92 testClass = EmployeeControllerTest, testInstance = integration.EmployeeControllerTest@3eeba704, testMethod = save@EmployeeControllerTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@69ffacfe testClass = EmployeeControllerTest, locations = '{}', classes = '{class com.ceiba.ceibacoins.CeibacoinsApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@78cd1944, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@351584c0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@81505118, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@64157fd8, [ImportsContextCustomizer@17149a31 key = [org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@724108b2, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@52ed9f13, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@36fe0fd]; rollback [true]
+Hibernate: select jpaemploye0_.nuip as nuip1_1_0_, jpaemploye0_.birthday as birthday2_1_0_, jpaemploye0_.ceiba_coins as ceiba_co3_1_0_, jpaemploye0_.employee_last_name as employee4_1_0_, jpaemploye0_.employee_name as employee5_1_0_, jpaemploye0_.entry as entry6_1_0_, jpaemploye0_.state as state7_1_0_ from empleado jpaemploye0_ where jpaemploye0_.nuip=?
+Hibernate: insert into empleado (birthday, ceiba_coins, employee_last_name, employee_name, entry, state, nuip) values (?, ?, ?, ?, ?, ?, ?)
+2020-02-25 16:33:07.762  INFO 18640 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@4a204f92 testClass = EmployeeControllerTest, testInstance = integration.EmployeeControllerTest@3eeba704, testMethod = save@EmployeeControllerTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@69ffacfe testClass = EmployeeControllerTest, locations = '{}', classes = '{class com.ceiba.ceibacoins.CeibacoinsApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@78cd1944, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@351584c0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@81505118, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@64157fd8, [ImportsContextCustomizer@17149a31 key = [org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@724108b2, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@52ed9f13, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]
+2020-02-25 16:33:07.769  INFO 18640 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@4a204f92 testClass = EmployeeControllerTest, testInstance = integration.EmployeeControllerTest@f690e1, testMethod = findByStateEmployees@EmployeeControllerTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@69ffacfe testClass = EmployeeControllerTest, locations = '{}', classes = '{class com.ceiba.ceibacoins.CeibacoinsApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@78cd1944, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@351584c0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@81505118, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@64157fd8, [ImportsContextCustomizer@17149a31 key = [org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@724108b2, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@52ed9f13, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@36fe0fd]; rollback [true]
+Hibernate: select jpaemploye0_.nuip as nuip1_1_, jpaemploye0_.birthday as birthday2_1_, jpaemploye0_.ceiba_coins as ceiba_co3_1_, jpaemploye0_.employee_last_name as employee4_1_, jpaemploye0_.employee_name as employee5_1_, jpaemploye0_.entry as entry6_1_, jpaemploye0_.state as state7_1_ from empleado jpaemploye0_ where jpaemploye0_.state=?
+2020-02-25 16:33:07.839  INFO 18640 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@4a204f92 testClass = EmployeeControllerTest, testInstance = integration.EmployeeControllerTest@f690e1, testMethod = findByStateEmployees@EmployeeControllerTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@69ffacfe testClass = EmployeeControllerTest, locations = '{}', classes = '{class com.ceiba.ceibacoins.CeibacoinsApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@78cd1944, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@351584c0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@81505118, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@64157fd8, [ImportsContextCustomizer@17149a31 key = [org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@724108b2, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@52ed9f13, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 6.0.1</a> at Feb 25, 2020, 4:33:08 PM</p>
+</div>
+</div>
+</body>
+</html>

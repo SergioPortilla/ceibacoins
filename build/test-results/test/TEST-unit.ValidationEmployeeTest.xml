@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="unit.ValidationEmployeeTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2020-02-25T21:33:07" hostname="SERGIO-PORTILLA" time="0.008">
+  <properties/>
+  <testcase name="isEntryTodayTest()" classname="unit.ValidationEmployeeTest" time="0.0"/>
+  <testcase name="isBirthDayTest()" classname="unit.ValidationEmployeeTest" time="0.001"/>
+  <testcase name="isNotEntryTest()" classname="unit.ValidationEmployeeTest" time="0.001"/>
+  <testcase name="isNotBirthDayTest()" classname="unit.ValidationEmployeeTest" time="0.0"/>
+  <testcase name="isWeekendTest()" classname="unit.ValidationEmployeeTest" time="0.0"/>
+  <testcase name="convertDateTest()" classname="unit.ValidationEmployeeTest" time="0.0"/>
+  <testcase name="isWeekDayTest()" classname="unit.ValidationEmployeeTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
