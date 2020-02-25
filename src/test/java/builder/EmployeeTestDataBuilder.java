@@ -1,4 +1,4 @@
-package com.ceiba.ceibacoins.builder;
+package builder;
 
 import com.ceiba.ceibacoins.domain.model.Employee;
 import com.ceiba.ceibacoins.infrastructure.adapter.repository.jpaentity.JpaEmployee;
@@ -33,7 +33,43 @@ public class EmployeeTestDataBuilder {
         this.ceibaCoins = CEIBACOINS;
         this.state = STATE;
     }
-    public Employee Build() {
-        return new Employee(this.NUIP, this.EMPLOYEENAME, this.EMPLOYEELASTNAME, this.BORN, this.ENTRY, this.CEIBACOINS,this.STATE);
+
+    public Employee build() {
+        return new Employee(this.nuip, this.employeeName, this.employeeLastName, this.born, this.entry, this.ceibaCoins ,this.state);
+    }
+
+    public EmployeeTestDataBuilder withNuip(Long nuip) {
+        this.nuip = nuip;
+        return this;
+    }
+
+    public EmployeeTestDataBuilder withName(String name) {
+        this.employeeName = name;
+        return this;
+    }
+
+    public EmployeeTestDataBuilder withLastName(String lastName) {
+        this.employeeLastName = lastName;
+        return this;
+    }
+
+    public EmployeeTestDataBuilder withBorn(Date born) {
+        this.born = born;
+        return this;
+    }
+
+    public EmployeeTestDataBuilder withEntry(Date entry) {
+        this.entry = entry;
+        return this;
+    }
+
+    public EmployeeTestDataBuilder withCoins(Double ceibacoins) {
+        this.ceibaCoins = ceibacoins;
+        return this;
+    }
+
+    public EmployeeTestDataBuilder withState(Boolean state) {
+        this.state = state;
+        return this;
     }
 }

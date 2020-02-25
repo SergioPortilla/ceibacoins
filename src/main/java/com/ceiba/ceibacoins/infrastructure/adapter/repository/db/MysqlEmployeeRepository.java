@@ -1,7 +1,6 @@
 package com.ceiba.ceibacoins.infrastructure.adapter.repository.db;
 
 import com.ceiba.ceibacoins.domain.model.Employee;
-import com.ceiba.ceibacoins.domain.model.ecxeption.NotFountEmployeeException;
 import com.ceiba.ceibacoins.domain.ports.EmployeeRepository;
 import com.ceiba.ceibacoins.infrastructure.adapter.repository.jpaentity.JpaEmployee;
 import com.ceiba.ceibacoins.infrastructure.adapter.repository.jparepository.JpaEmployeeRepository;
@@ -29,7 +28,7 @@ public class MysqlEmployeeRepository implements EmployeeRepository {
 
     @Override
     public Employee findById(Long nuip) {
-        return EmployeeMapper.MAPPER.toEmployee( jpaEmployeeRepository.findById(nuip).orElseThrow(() -> new NotFountEmployeeException(NOT_FOUND_EMPLOYEE)));
+        return EmployeeMapper.MAPPER.toEmployee( jpaEmployeeRepository.findById(nuip).orElse(null));
     }
 
     @Override

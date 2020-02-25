@@ -1,8 +1,7 @@
-package com.ceiba.ceibacoins.domain.model.validation;
+package unit;
 
+import com.ceiba.ceibacoins.domain.model.validation.ValidationDateEmployee;
 import org.junit.jupiter.api.Test;
-//import org.junit.runner.RunWith;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.time.LocalDate;
 import java.util.Calendar;
@@ -10,8 +9,7 @@ import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-//@RunWith(SpringRunner.class)
-class ValidationDateEmployeeTest {
+class ValidationEmployeeTest {
 
     @Test
     void isWeekendTest() {

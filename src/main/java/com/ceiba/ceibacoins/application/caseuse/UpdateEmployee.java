@@ -4,7 +4,6 @@ import com.ceiba.ceibacoins.domain.model.Employee;
 import com.ceiba.ceibacoins.domain.model.validation.ValidationDateEmployee;
 import com.ceiba.ceibacoins.domain.ports.ActivityRepository;
 import com.ceiba.ceibacoins.domain.ports.EmployeeRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -27,12 +26,12 @@ public class UpdateEmployee {
     /** Inyeccion del repositorio de actividades */
     private ActivityRepository activityRepository;
 
-    @Autowired
-    private FindEmployee findEmployee;
+    private final FindEmployee findEmployee;
 
-    public UpdateEmployee(EmployeeRepository employeeRepository, ActivityRepository activityRepository) {
+    public UpdateEmployee(EmployeeRepository employeeRepository, ActivityRepository activityRepository, FindEmployee findEmployee) {
         this.employeeRepository = employeeRepository;
         this.activityRepository = activityRepository;
+        this.findEmployee = findEmployee;
     }
 
     public String createEmployee(Employee employee, boolean newEmployee) {
@@ -48,7 +47,7 @@ public class UpdateEmployee {
         }
     }
 
-    public String coinsUpdate(LocalDate date) {
+    public String updateCoins(LocalDate date) {
         List<String> usersModify = new ArrayList<>();
         for (Employee employee : findEmployee.findActiveEmployees()) {
             boolean modify;

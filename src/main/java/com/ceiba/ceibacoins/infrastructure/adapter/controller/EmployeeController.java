@@ -73,6 +73,6 @@ public class EmployeeController {
 	 * @return Indica a que usuarios les fueron asignados ceibaCoins
 	 */
 	@PatchMapping
-	public @ResponseBody String updateEmployes(){ return updateEmployee.coinsUpdate(LocalDate.now());}
+	public @ResponseBody String updateEmployes(){ return updateEmployee.updateCoins(LocalDate.now());}
 
 }
