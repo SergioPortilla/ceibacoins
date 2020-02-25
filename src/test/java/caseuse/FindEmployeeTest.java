@@ -12,6 +12,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -89,7 +90,8 @@ class FindEmployeeTest {
                 .withLastName("casouso").withBorn(new Date())
                 .withEntry(new Date()).withCoins(0.0)
                 .withState(true).build();
-        List<Employee> employees = List.of(employee);
+        List<Employee> employees = new ArrayList<>();
+        employees.add(employee);
 
         when(this.employeeRepository.findByStateEmployees(true)).thenReturn(employees);
         List<Employee> EmployeesFound = this.findEmployee.findActiveEmployees();

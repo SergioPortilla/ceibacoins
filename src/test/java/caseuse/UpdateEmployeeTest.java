@@ -14,6 +14,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -76,7 +77,8 @@ class UpdateEmployeeTest {
         activity.setName("Algo");
         activity.setPrice(0.0);
         LocalDate currentDate = LocalDate.now();
-        List<Employee> employees = List.of(employee);
+        List<Employee> employees = new ArrayList<>();
+        employees.add(employee);
 
         when(this.activityRepository.findById(1L)).thenReturn(activity);
         when(this.activityRepository.findById(2L)).thenReturn(activity);
