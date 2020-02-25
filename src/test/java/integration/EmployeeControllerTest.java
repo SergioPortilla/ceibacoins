@@ -60,9 +60,12 @@ class EmployeeControllerTest {
     @Test
     void findByStateEmployees() {
 
-        List<Employee> employees = employeeRepository.findByStateEmployees(true);
+        List<Employee> employees;
+
+        employees= employeeRepository.findByStateEmployees(true);
         entityManager.flush();
 
         Assertions.assertThat(employees).isNotNull();
+
     }
 }
