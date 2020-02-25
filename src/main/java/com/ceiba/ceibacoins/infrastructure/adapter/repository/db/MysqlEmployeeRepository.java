@@ -1,6 +1,7 @@
 package com.ceiba.ceibacoins.infrastructure.adapter.repository.db;
 
 import com.ceiba.ceibacoins.domain.model.Employee;
+import com.ceiba.ceibacoins.domain.model.ecxeption.NotFountEmployeeException;
 import com.ceiba.ceibacoins.domain.ports.EmployeeRepository;
 import com.ceiba.ceibacoins.infrastructure.adapter.repository.jpaentity.JpaEmployee;
 import com.ceiba.ceibacoins.infrastructure.adapter.repository.jparepository.JpaEmployeeRepository;
@@ -8,9 +9,10 @@ import com.ceiba.ceibacoins.infrastructure.adapter.repository.mapper.EmployeeMap
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
-import java.util.Optional;
 
 public class MysqlEmployeeRepository implements EmployeeRepository {
+
+    public static final String NOT_FOUND_EMPLOYEE = "Empleado no encontrado";
 
     private JpaEmployeeRepository jpaEmployeeRepository;
 
@@ -27,7 +29,7 @@ public class MysqlEmployeeRepository implements EmployeeRepository {
 
     @Override
     public Employee findById(Long nuip) {
-        return EmployeeMapper.MAPPER.toEmployee( jpaEmployeeRepository.findById(nuip).orElse(null));
+        return EmployeeMapper.MAPPER.toEmployee( jpaEmployeeRepository.findById(nuip).orElseThrow(() -> new NotFountEmployeeException(NOT_FOUND_EMPLOYEE)));
     }
 
     @Override

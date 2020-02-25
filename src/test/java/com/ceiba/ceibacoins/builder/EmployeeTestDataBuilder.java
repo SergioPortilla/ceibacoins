@@ -1,5 +1,6 @@
 package com.ceiba.ceibacoins.builder;
 
+import com.ceiba.ceibacoins.domain.model.Employee;
 import com.ceiba.ceibacoins.infrastructure.adapter.repository.jpaentity.JpaEmployee;
 
 import java.util.Calendar;
@@ -15,13 +16,13 @@ public class EmployeeTestDataBuilder {
     private static final Double CEIBACOINS = 100000.0D;
     private static final Boolean STATE = Boolean.TRUE;
 
-    private Long nuip;
-    private String employeeName;
-    private String employeeLastName;
-    private Date born;
-    private Date entry;
-    private Double ceibaCoins;
-    private Boolean state;
+    public Long nuip;
+    public String employeeName;
+    public String employeeLastName;
+    public Date born;
+    public Date entry;
+    public Double ceibaCoins;
+    public Boolean state;
 
     public EmployeeTestDataBuilder() {
         this.nuip = NUIP;
@@ -32,7 +33,7 @@ public class EmployeeTestDataBuilder {
         this.ceibaCoins = CEIBACOINS;
         this.state = STATE;
     }
-    public JpaEmployee Build() {
-        return new JpaEmployee(this.nuip, this.employeeName, this.employeeLastName, this.born, this.entry, this.ceibaCoins,this.state);
+    public Employee Build() {
+        return new Employee(this.NUIP, this.EMPLOYEENAME, this.EMPLOYEELASTNAME, this.BORN, this.ENTRY, this.CEIBACOINS,this.STATE);
     }
 }

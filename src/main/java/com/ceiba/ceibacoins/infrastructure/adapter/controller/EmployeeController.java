@@ -1,6 +1,7 @@
 package com.ceiba.ceibacoins.infrastructure.adapter.controller;
 
-import com.ceiba.ceibacoins.application.caseuse.EmployeeService;
+import com.ceiba.ceibacoins.application.caseuse.FindEmployee;
+import com.ceiba.ceibacoins.application.caseuse.UpdateEmployee;
 import com.ceiba.ceibacoins.domain.model.Employee;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -20,11 +21,14 @@ import java.util.List;
 @RequestMapping(path = "/ceibacoins")
 public class EmployeeController {
 
-	/** Inyeccion del servicio de empleados */
-	public final EmployeeService employeeService;
+	/** Inyeccion del servicio de creacion/modificacion de empleados */
+	public final UpdateEmployee updateEmployee;
+	/** Inyeccion del servicio de busquedas de empleados */
+	public final FindEmployee findEmployee;
 
-	public EmployeeController(EmployeeService employeeService) {
-		this.employeeService = employeeService;
+	public EmployeeController(UpdateEmployee updateEmployee, FindEmployee findEmployee) {
+		this.updateEmployee = updateEmployee;
+		this.findEmployee = findEmployee;
 	}
 
 	/**
@@ -33,7 +37,7 @@ public class EmployeeController {
 	 * @return Lista de empleados activos
 	 */
 	@GetMapping
-	public @ResponseBody List<Employee> getActiveEmployees() { return employeeService.findActiveEmployees();}
+	public @ResponseBody List<Employee> getActiveEmployees() { return findEmployee.findActiveEmployees();}
 
 	/**
 	 * Peticion que realiza la creacion del usuario a partir de los datos obtenidos.
@@ -42,7 +46,7 @@ public class EmployeeController {
 	 * @return Dato de si fue el usuario creado o no
 	 */
 	@PostMapping
-	public @ResponseBody String createEmployes(@RequestBody Employee employee){ return employeeService.createEmployee(employee, true);}
+	public @ResponseBody String createEmployes(@RequestBody Employee employee){ return updateEmployee.createEmployee(employee, true);}
 
 	/**
 	 * Obtiene los datos del empleado de base de datos a partir del nuip.
@@ -52,7 +56,7 @@ public class EmployeeController {
 	 */
 	@GetMapping(path = "/{nuip}")
 	public @ResponseBody
-	Employee retrieveEmployee(@PathVariable long nuip){ return employeeService.findEmployeeById(nuip, LocalDate.now());}
+	Employee retrieveEmployee(@PathVariable long nuip){ return findEmployee.findEmployeeById(nuip, LocalDate.now());}
 
 	/**
 	 * Actualiza los datos del empleado a partir de la informacion obtenida.
@@ -61,7 +65,7 @@ public class EmployeeController {
 	 * @return Indicacion de si el usuario fue o no creado
 	 */
 	@PutMapping
-	public @ResponseBody String updateEmployes(@RequestBody Employee employee){ return employeeService.createEmployee(employee, false);}
+	public @ResponseBody String updateEmployes(@RequestBody Employee employee){ return updateEmployee.createEmployee(employee, false);}
 
 	/**
 	 * Actualiza los ceibaCoins del usuario segun la actividad que se halla ejecutado.
@@ -69,6 +73,6 @@ public class EmployeeController {
 	 * @return Indica a que usuarios les fueron asignados ceibaCoins
 	 */
 	@PatchMapping
-	public @ResponseBody String updateEmployes(){ return employeeService.coinsUpdate(LocalDate.now());}
+	public @ResponseBody String updateEmployes(){ return updateEmployee.coinsUpdate(LocalDate.now());}
 
 }

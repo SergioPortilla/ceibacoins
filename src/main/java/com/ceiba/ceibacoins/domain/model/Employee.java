@@ -34,6 +34,9 @@ public class Employee {
     public Employee() {
     }
 
+    public Employee(Long nuip, String employeeName, String employeeLastName, Date born, Date entry, Double ceibaCoins, Boolean state) {
+    }
+
     public Long getNuip() {
         return nuip;
     }

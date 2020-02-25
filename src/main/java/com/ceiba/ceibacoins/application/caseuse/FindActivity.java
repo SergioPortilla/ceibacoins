@@ -9,11 +9,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ActivityService {
+public class FindActivity {
 
     private final ActivityRepository activityRepository;
 
-    public ActivityService(ActivityRepository activityRepository) {
+    public FindActivity(ActivityRepository activityRepository) {
         this.activityRepository = activityRepository;
     }
 

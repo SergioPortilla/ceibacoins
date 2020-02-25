@@ -1,6 +1,6 @@
 package com.ceiba.ceibacoins.infrastructure.adapter.controller;
 
-import com.ceiba.ceibacoins.application.caseuse.ActivityService;
+import com.ceiba.ceibacoins.application.caseuse.FindActivity;
 import com.ceiba.ceibacoins.domain.model.Activity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,13 +15,13 @@ import java.util.List;
 @RequestMapping(path = "/activities")
 public class ActivityController {
 
-    private final ActivityService activityService;
+    private final FindActivity findActivity;
 
-    public ActivityController(ActivityService activityService) {
-        this.activityService = activityService;
+    public ActivityController(FindActivity findActivity) {
+        this.findActivity = findActivity;
     }
 
     @GetMapping
     public @ResponseBody
-    List<Activity> getAllActivities() { return activityService.findAllActivities();}
+    List<Activity> getAllActivities() { return findActivity.findAllActivities();}
 }
